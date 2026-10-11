@@ -1,0 +1,21 @@
+target/
+out/
+
+# Neovim
+*.swp
+*.swo
+*~
+Session.Neovim
+
+# Service files Java Language server and IDE
+.project
+.classpath
+.settings/
+.idea/
+*.Neovim
+
+# Compiled files
+*.class
+
+# logs
+*.log
