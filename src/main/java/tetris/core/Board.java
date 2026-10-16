@@ -45,4 +45,12 @@ public class Board {
         }
         return true;
     }
+
+    // Locks a piece on the board
+    // The caller must check canPlace first
+    public void lock(Piece piece) {
+        for (Point cell : piece.cells()) {
+            grid[cell.y()][cell.x()] = piece.type();
+        }
+    }
 }
