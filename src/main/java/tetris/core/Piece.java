@@ -27,4 +27,18 @@ public record Piece(PieceType type, int x, int y, List<Point> offsets) {
     public Piece movedBy(int dx, int dy) {
         return new Piece(type, x + dx, y + dy, offsets);
     }
+
+    // Returns a new piece rotated by 90° clockwise
+    // The O piece looks the same after rotation, so it returned unchanged
+    public Piece rotatedClockwise() {
+        if (type == PieceType.O) {
+            return this;
+        }
+
+        List<Point> points = new ArrayList<>();
+        for (Point offset : offsets) {
+            points.add(offset.rotateClockwise());
+        }
+        return new Piece(type, x, y, points);
+    }
 }
