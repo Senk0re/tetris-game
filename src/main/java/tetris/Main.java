@@ -6,13 +6,11 @@ public class Main {
     public static void main(String[] args) {
         Board brd = new Board(10, 20);
 
-        System.out.println(brd.width());
-        System.out.println(brd.height());
+        System.out.println(brd.canPlace(Piece.spawn(PieceType.T, 5, 1)));
+        System.out.println(brd.canPlace(Piece.spawn(PieceType.T, 0, 1)));
+        System.out.println(brd.canPlace(Piece.spawn(PieceType.T, 9, 1)));
+        System.out.println(brd.canPlace(Piece.spawn(PieceType.T, 5, 19)));
+        System.out.println(brd.canPlace(Piece.spawn(PieceType.T, 5, 20)));
 
-        System.out.println(brd.cellAt(0, 0));
-        System.out.println(brd.cellAt(9, 19));
-
-        // System.out.println(brd.cellAt(10, 0));
-        // ArrayIndexOutOfBoundException
     }
 }
