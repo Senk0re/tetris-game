@@ -22,4 +22,9 @@ public record Piece(PieceType type, int x, int y, List<Point> offsets) {
         }
         return points;
     }
+
+    // Returns a new piece moved by dx columns and dy rows
+    public Piece movedBy(int dx, int dy) {
+        return new Piece(type, x + dx, y + dy, offsets);
+    }
 }
