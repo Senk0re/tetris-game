@@ -9,6 +9,10 @@ import java.util.List;
 // offsets are the 4 cells relative to the pivot, not board coordinates.
 public record Piece(PieceType type, int x, int y, List<Point> offsets) {
 
+    public Piece {
+        offsets = List.copyOf(offsets);
+    }
+
     // Creates a piece in its starting position without rotation
     public static Piece spawn(PieceType type, int x, int y) {
         return new Piece(type, x, y, type.cells());
