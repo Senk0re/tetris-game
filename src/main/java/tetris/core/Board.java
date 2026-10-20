@@ -71,4 +71,16 @@ public class Board {
         }
         grid[0] = new PieceType[width];
     }
+
+    // Removes all full rows and returns how many were removed
+    public int clearLines() {
+        int removed = 0;
+        for (int r = 0; r < height; r++) {
+            if (isRowFull(r)) {
+                removeRow(r);
+                removed++;
+            }
+        }
+        return removed;
+    }
 }
