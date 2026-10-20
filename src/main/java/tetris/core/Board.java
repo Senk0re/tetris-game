@@ -63,4 +63,12 @@ public class Board {
         }
         return true;
     }
+
+    // Removes the row and moves all rows above it one step down
+    public void removeRow(int y) {
+        for (int r = y; r > 0; r--) {
+            grid[r] = grid[r - 1];
+        }
+        grid[0] = new PieceType[width];
+    }
 }
