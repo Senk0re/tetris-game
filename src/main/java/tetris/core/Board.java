@@ -53,4 +53,14 @@ public class Board {
             grid[cell.y()][cell.x()] = piece.type();
         }
     }
+
+    // Returns true if the row has no empty cells
+    public boolean isRowFull(int y) {
+        for (int i = 0; i < width; i++) {
+            if (cellAt(i, y) == null) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
